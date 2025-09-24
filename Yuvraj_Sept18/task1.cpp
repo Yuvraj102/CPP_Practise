@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+using namespace std; 
 
 class VehicleStatus {
 private:
@@ -26,8 +26,8 @@ public:
 
     float averageWheelSpeed() const {
         float sum = 0;
-        for (int i = 0; i < num_wheels; i++) sum += wheel_speed[i];
-        return sum / num_wheels;
+        for (int i = 0; i < num_wheels; i++) {sum += wheel_speed[i];}
+        return (sum / num_wheels);
     }
 
     float maxEngineTemp() const {
@@ -76,10 +76,10 @@ int main() {
     float et2[2] = {92.0f, 89.5f};
     VehicleStatus v2(4, ws2, 2, et2);
 
-    cout << "Vehicle 1:\n"; printVehicleStatus(v1);
-    cout << "Vehicle 2:\n"; printVehicleStatus(v2);
+    std::cout << "Vehicle 1:\n"; printVehicleStatus(v1);
+    std::cout << "Vehicle 2:\n"; printVehicleStatus(v2);
 
-    cout << "Member comparison: " << (v1.isWheelSpeedHigher(v2) ? "V1 faster" : "V2 faster") << endl;
-    cout << "Global comparison: " << (compareWheelSpeedGlobal(v1, v2) ? "V1 faster" : "V2 faster") << endl;
+    std::cout << "Member comparison: " << (v1.isWheelSpeedHigher(v2) ? "V1 faster" : "V2 faster") << endl;
+    std::cout << "Global comparison: " << (compareWheelSpeedGlobal(v1, v2) ? "V1 faster" : "V2 faster") << endl;
     return 0;
 }
